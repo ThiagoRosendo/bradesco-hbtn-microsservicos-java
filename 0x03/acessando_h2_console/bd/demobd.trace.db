@@ -1,0 +1,5 @@
+2025-11-21 22:22:29.756109-03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]jdbc:h2:file:./bd/demobd\000d\000aUsers\000d\000aAdmin"; SQL statement:
+jdbc:h2:file:./bd/demobd
+Users
+Admin [42000-232]
