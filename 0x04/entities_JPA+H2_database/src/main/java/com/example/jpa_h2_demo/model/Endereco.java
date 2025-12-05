@@ -1,6 +1,7 @@
 package com.example.jpa_h2_demo.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -9,7 +10,7 @@ import jakarta.persistence.ForeignKey;
 @Entity
 public class Endereco {
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "cliente_id", nullable = false,
                 foreignKey = @ForeignKey(name = "fk_endereco_cliente"))
 
