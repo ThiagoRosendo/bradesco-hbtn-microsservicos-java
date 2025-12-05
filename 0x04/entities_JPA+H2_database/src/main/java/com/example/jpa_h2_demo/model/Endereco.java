@@ -11,11 +11,9 @@ import jakarta.persistence.ForeignKey;
 public class Endereco {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "cliente_id", nullable = false,
-                foreignKey = @ForeignKey(name = "fk_endereco_cliente"))
-
+    @JoinColumn(name = "cliente_id", nullable = false, foreignKey = @ForeignKey(name = "fk_endereco_cliente"))
     private Cliente cliente;
-    
+
     @Id
     private int id;
     private String logradouro;
@@ -24,7 +22,7 @@ public class Endereco {
     private String bairro;
     private String cidade;
     private String estado;
-    
+
     public Endereco(Cliente cliente, int id, String logradouro, String endereco, int numero, String bairro,
             String cidade, String estado) {
         this.cliente = cliente;

@@ -11,15 +11,14 @@ import jakarta.persistence.ForeignKey;
 public class Telefone {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "cliente_id", nullable = false,
-                foreignKey = @ForeignKey(name = "fk_telefone_cliente"))
+    @JoinColumn(name = "cliente_id", nullable = false, foreignKey = @ForeignKey(name = "fk_telefone_cliente"))
     private Cliente cliente;
-    
+
     @Id
     private int id;
     private String ddd;
     private String numero;
-    
+
     public Telefone(Cliente cliente, int id, String ddd, String numero) {
         this.cliente = cliente;
         this.id = id;
@@ -58,6 +57,5 @@ public class Telefone {
     public void setNumero(String numero) {
         this.numero = numero;
     }
-
 
 }
