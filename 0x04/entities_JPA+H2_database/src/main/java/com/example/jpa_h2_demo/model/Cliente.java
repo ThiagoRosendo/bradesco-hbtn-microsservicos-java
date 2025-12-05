@@ -2,9 +2,14 @@ package com.example.jpa_h2_demo.model;
 
 import java.util.List;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
+@Entity
 public class Cliente {
+
+    @Id
     private int id;
     private String nome;
     private int idade;

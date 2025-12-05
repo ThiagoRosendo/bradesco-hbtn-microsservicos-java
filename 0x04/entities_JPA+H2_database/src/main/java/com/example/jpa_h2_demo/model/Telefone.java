@@ -1,12 +1,21 @@
 package com.example.jpa_h2_demo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.ForeignKey;
 
+@Entity
 public class Telefone {
 
     @ManyToOne
+    
+    @JoinColumn(name = "cliente_id", nullable = false,
+                foreignKey = @ForeignKey(name = "fk_telefone_cliente"))
     private Cliente cliente;
     
+    @Id
     private int id;
     private String ddd;
     private String numero;
